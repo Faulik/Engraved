@@ -1,8 +1,8 @@
 language: python
 python:
-  - "3.4"
+  - '3.4'
 install:
- - "pip install -r requirements/travis.txt"
+ - 'pip install -r requirements/travis.txt'
 before_script:
  - python manage.py syncdb –migrate –noinput
 script:
