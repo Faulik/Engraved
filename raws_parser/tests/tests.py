@@ -12,12 +12,12 @@ class RawsParsingTestCase(TestCase):
 
     def test_parsing_action(self):
         """Parsing actually ends successful"""
-        result = self.grammar.parse(open(os.getcwd() +
-                                         '/packs/tests/test_item.txt').read())
+        self.grammar.parse(open(os.getcwd() +
+                           '/raws_parser/tests/assets/test_item.txt').read())
 
     def test_elements(self):
         result = self.grammar.parse(open(os.getcwd() +
-                                         '/packs/tests/test_item.txt').read())
+                            '/raws_parser/tests/assets/test_item.txt').read())
 
         self.assertEqual(result.select('objects > object_stm *')[0],
                          '[OBJECT:ITEM]')
