@@ -1,10 +1,10 @@
 language: python
 python:
   - 3.4
-env:
-  - DJANGO_SETTINGS_MODULE = engraved.settings.base
 install:
   - pip install -r requirements/travis.txt
+env:
+  - DJANGO_SETTINGS_MODULE = engraved.settings.base
 before_script:
   - python manage.py migrate
 script:
