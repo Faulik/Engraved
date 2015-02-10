@@ -2,7 +2,7 @@ start: (NEWLINE|COMMENT|objects)+;
 
 objects: object_stm NEWLINE? (object)+;
 
-object_stm: '\[OBJECT:[\w_]+' RSQB;
+object_stm: '\[OBJECT:[\w_]+\]';
 
 object:  OBJECT NEWLINE? tokens;
 
