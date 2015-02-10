@@ -4,6 +4,6 @@ python:
 install:
   - pip install -r requirements/travis.txt
 before_script:
-  - python manage.py syncdb –migrate –noinput
+  - python manage.py syncdb -migrate -noinput
 script:
   - tox
