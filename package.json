@@ -1,0 +1,25 @@
+{
+  "name": "Engraved",
+  "version": "0.0.1",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Faulik/Engraved.git"
+  },
+  "author": "Faul",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Faulik/Engraved/issues"
+  },
+  "homepage": "https://github.com/Faulik/Engraved",
+  "dependencies": {
+    "css-loader": "^0.9.1",
+    "d3": "^3.5.5",
+    "style-loader": "^0.8.3"
+  },
+  "devDependecies": {}
+}

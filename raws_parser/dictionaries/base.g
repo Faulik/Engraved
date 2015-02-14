@@ -1,13 +1,13 @@
-start: (NEWLINE|COMMENT|objects)+;
+start: (NEWLINE|COMMENT|main)+;
 
-objects: object_stm NEWLINE? (object)+;
+main: object_stm NEWLINE? (object)+;
 
 object_stm: '\[OBJECT:[\w_]+\]';
 
-object:  OBJECT NEWLINE? tokens;
+object:  OBJECT NEWLINE? options;
 
-tokens: (COMMENT|token|NEWLINE)+;
-token: TOKEN NEWLINE?;
+options: (COMMENT|option|NEWLINE)+;
+option: TOKEN NEWLINE?;
 
 OBJECT: LSQB 'ITEM_[^\]]+' RSQB
 {
@@ -31,8 +31,8 @@ TOKEN: LSQB '[\w: _]+' RSQB
     RSQB: '\]';
 };
 
-COMMENT:'[^\[\]\r?\n]+';
-NEWLINE: '[\r?\n]+' (%newline) ;
+COMMENT:'[^\[\]\r?\n]+' (%ignore);
+NEWLINE: '[\r?\n]+' (%newline)(%ignore) ;
 
 LSQB: '\[';
 RSQB: '\]';

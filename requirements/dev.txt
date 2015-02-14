@@ -1,5 +1,1 @@
 -r base.txt
-
-pydot
-graphviz
-tox

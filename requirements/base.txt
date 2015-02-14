@@ -1,2 +1,4 @@
 plyplus
 django
+tox
+djangorestframework
