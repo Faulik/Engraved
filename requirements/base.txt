@@ -1,4 +1,3 @@
 plyplus
 django
-tox
 djangorestframework
