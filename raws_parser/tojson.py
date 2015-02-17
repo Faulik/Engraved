@@ -7,7 +7,7 @@ class MakeJson(STransformer):
         # nah, i done it again
         return '{{"object stm":"{}",' \
                '"objects":[{}]}}'.format(obj_stm,
-                                              ''.join(tree.tail[1:])[:-1])
+                                         ''.join(tree.tail[1:])[:-1])
 
     def object(self, tree):
         token_type = tree.select1('token_type *')
@@ -15,7 +15,7 @@ class MakeJson(STransformer):
         return '{{"token type":"{}",' \
                '"token item name":"{}",' \
                '"options":[{}]}},'.format(token_type, token_item_name,
-                                            ''.join(tree.tail[1:]))
+                                          ''.join(tree.tail[1:]))
 
     def options(self, tree):
         # The most stupid thing i done yet

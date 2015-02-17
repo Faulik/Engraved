@@ -10,10 +10,10 @@ options: (COMMENT|option|NEWLINE)+;
 option: TOKEN NEWLINE?;
 
 
-OBJECT: '\[ITEM_[^\]]+\]'
+OBJECT: '\[REACTION:[^\]]+\]'
 {
-    start:  '\[ITEM_' token_type ':' token_item_name RSQB;
-    token_type: '[\w_]+';
+    start:  '\[REACTION:' tokens RSQB;
+    tokens: token_item_name;
     token_item_name: '[\w_]+';
 
     WS: '[\t \f]+' (%ignore);
@@ -21,13 +21,14 @@ OBJECT: '\[ITEM_[^\]]+\]'
     RSQB: '\]';
 };
 
-TOKEN: LSQB '[\w\-: _]+' RSQB
+TOKEN: LSQB '[^\[\]]+' RSQB
 {
     start: LSQB tokens RSQB;
-    tokens:  token (':' token)*;
-    token: '\w[\w\-_ ]*';
+    @tokens:  token (COLON token)*;
+    token: '[^\[\]:]+';
 
     WS: '[\t \f]+' (%ignore);
+    COLON: ':';
     LSQB: '\[';
     RSQB: '\]';
 };

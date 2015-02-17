@@ -10,10 +10,9 @@ options: (COMMENT|option|NEWLINE)+;
 option: TOKEN NEWLINE?;
 
 
-OBJECT: '\[ITEM_[^\]]+\]'
+OBJECT: '\[TISSUE_TEMPLATE[^\]]+\]'
 {
-    start:  '\[ITEM_' token_type ':' token_item_name RSQB;
-    token_type: '[\w_]+';
+    start:  '\[TISSUE_TEMPLATE' ':' token_item_name RSQB;
     token_item_name: '[\w_]+';
 
     WS: '[\t \f]+' (%ignore);

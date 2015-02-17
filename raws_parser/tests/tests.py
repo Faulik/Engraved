@@ -9,7 +9,7 @@ TEST_ASSETS = MODULE_DIR + '/tests/assets'
 class RawsParsingTestCase(TestCase):
     def setUp(self):
         self.grammar = plyplus.Grammar(plyplus.grammars.open(
-            MODULE_DIR + '/dictionaries/base.g'),
+            MODULE_DIR + '/dictionaries/item.g'),
             auto_filter_tokens=False)
 
     def test_parsing_action(self):
